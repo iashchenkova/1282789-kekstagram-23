@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Анна Ященкова](https://up.htmlacademy.ru/javascript/23/user/1282789).
-* Наставник: `Неизвестно`.
+* Наставник: [Павел Лукин](https://up.htmlacademy.ru/javascript/23/user/1313529).
 
 ---
 
