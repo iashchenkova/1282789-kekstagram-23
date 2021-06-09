@@ -1,21 +1,21 @@
-let randomNumber = function (from, to) {
+const randomNumber = function (from, to) {
   if (from > to) {
-   console.log("что-то пошло не так");
-}  else {
-  let random = from + Math.random() * (to + 1 - from);
-  console.log(Math.ceil(random));
+    return false;
+  } else {
+    const random = from + Math.random() * (to + 1 - from);
+    return (Math.ceil(random));
   }
 };
 
-randomNumber(14, 60);
+randomNumber(14, 70);
 
-let lineLength = function (txt, max_lenght) {
-  if (max_lenght >= txt){
-  console.log("Пиши ещё");
- }
- else {
-  console.log("Символы кончились :(");
- }
+const lineLength = function (txt, maxLenght) {
+  if (maxLenght >= txt){
+    return true;
+  }
+  else {
+    return false;
+  }
 };
 
-lineLength(50,50);
+lineLength(50,20);
