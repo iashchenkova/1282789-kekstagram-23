@@ -1,21 +1,15 @@
 const randomNumber = function (from, to) {
-  if (from > to) {
-    return false;
-  } else {
+  if (from < to) {
     const random = from + Math.random() * (to + 1 - from);
     return (Math.ceil(random));
   }
+  return false;
 };
 
 randomNumber(14, 70);
 
-const lineLength = function (txt, maxLenght) {
-  if (maxLenght >= txt){
-    return true;
-  }
-  else {
-    return false;
-  }
+const lineLength = (txt, maxLength) => {
+  return maxLength >= txt;
 };
 
-lineLength(50,20);
+lineLength(14,18);
