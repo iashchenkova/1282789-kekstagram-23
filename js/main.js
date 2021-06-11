@@ -8,8 +8,5 @@ const randomNumber = function (from, to) {
 
 randomNumber(14, 70);
 
-const lineLength = (txt, maxLength) => {
-  return maxLength >= txt;
-};
-
-lineLength(14,18);
+const lineLen = (txtLen, maxLen) => maxLen > txtLen;
+lineLen(10, 12);
