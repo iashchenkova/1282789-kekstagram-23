@@ -9,7 +9,7 @@ const NAMES = [
   'Жёлтик',
 ];
 
-const MESSAGE = [
+const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
   'Когда вы делаете фотографию, хорошо бы убирать палец из кадра. В конце концов это просто непрофессионально',
@@ -18,14 +18,12 @@ const MESSAGE = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
-const getRandomArrayElement = (elements) => {
-  return elements[_.random(0, elements.length - 1)];
-};
-
 const numbers = [];
 const getRandomNumber = (min, max) => {
   const number = Math.floor(min + Math.random() * (max - min));
-  if (numbers.includes(number)) return getRandomNumber(min, max);
+  if (numbers.includes(number)) { 
+    return getRandomNumber(min, max);
+  }
   else {
     numbers.push(number);
     return number;
@@ -33,16 +31,17 @@ const getRandomNumber = (min, max) => {
 };
 
 const createPhotoDescription = () => {
+  const randomNumber =  getRandomNumber(1, 25);
   const randomAvatarIndex = Math.floor(Math.random() * 6) + 1;
   const likes = Math.floor(Math.random() * 200) + 15;
-  const id = getRandomNumber(1, 25);
-  const url = 'photos/' + getRandomNumber(1, 25) + 'jpg';
+  const id = randomNumber;
+  const url =  'photos/' + randomNumber + 'jpg';
   const  description = 'Это фотография';
   const comments = {
-    id: getRandomNumber(1, 25),
+    id: randomNumber,
     avatar: 'img/avatar' + randomAvatarIndex + '.svg',
-    message: getRandomArrayElement(MESSAGE),
-    name: getRandomArrayElement(NAMES),
+    message: getRandomNumber(1, MESSAGES.length),
+    name: getRandomNumber(1, NAMES.length),
   };
   return {
     id,
