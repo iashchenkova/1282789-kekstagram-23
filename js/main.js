@@ -18,24 +18,17 @@ const MESSAGES = [
   'Лица у людей на фотке перекошены, как будто их избивают. Как можно было поймать такой неудачный момент?!',
 ];
 
-const numbers = [];
-const getRandomNumber = (min, max) => {
-  const number = Math.floor(min + Math.random() * (max - min));
-  if (numbers.includes(number)) { 
-    return getRandomNumber(min, max);
-  }
-  else {
-    numbers.push(number);
-    return number;
-  }
-};
+function getRandomNumber(min, max) {
+  let rand = min - 0.5 + Math.random() * (max - min + 1);
+  return Math.round(rand);
+}
 
 const createPhotoDescription = () => {
   const randomNumber =  getRandomNumber(1, 25);
   const randomAvatarIndex = Math.floor(Math.random() * 6) + 1;
   const likes = Math.floor(Math.random() * 200) + 15;
   const id = randomNumber;
-  const url =  'photos/' + randomNumber + 'jpg';
+  const url =  'photos/ ${randomNumber} jpg'; 
   const  description = 'Это фотография';
   const comments = {
     id: randomNumber,
