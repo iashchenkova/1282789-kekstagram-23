@@ -8,11 +8,11 @@ const createPhotoDescription = () => {
   const randomAvatarIndex = Math.floor(Math.random() * 6) + 1;
   const likes = Math.floor(Math.random() * 200) + 15;
   const id = randomNumber;
-  const url = 'photos/${randomNumber}.jpg'; 
+  const url = `photos/${randomNumber}.jpg`;
   const  description = 'Это фотография';
   const comments = {
     id: randomNumber,
-    avatar: 'img/avatar/${randomAvatarIndex}.svg',
+    avatar: `img/avatar/${randomAvatarIndex}.svg`,
     message: getRandomNumber(1, MESSAGES.length),
     name: getRandomNumber(1, NAMES.length),
   };
